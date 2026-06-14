@@ -1,0 +1,70 @@
+name: Daily SEO Article Publisher
+
+on:
+  schedule:
+    - cron: '0 21 * * *'  # UTC 21:00 = JST 06:00
+  workflow_dispatch:       # 手動実行も可能
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic pyyaml requests markdown
+
+      - name: Generate articles (Claude API)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/generate.py
+          echo "✅ 記事生成完了"
+
+      - name: Post to WordPress (FromZERO + NISHIKI)
+        env:
+          FROMZERO_WP_URL: ${{ secrets.FROMZERO_WP_URL }}
+          FROMZERO_WP_USER: ${{ secrets.FROMZERO_WP_USER }}
+          FROMZERO_WP_APP_PASSWORD: ${{ secrets.FROMZERO_WP_APP_PASSWORD }}
+          NISHIKI_WP_URL: ${{ secrets.NISHIKI_WP_URL }}
+          NISHIKI_WP_USER: ${{ secrets.NISHIKI_WP_USER }}
+          NISHIKI_WP_APP_PASSWORD: ${{ secrets.NISHIKI_WP_APP_PASSWORD }}
+        run: |
+          python scripts/post_wordpress.py
+          echo "✅ WordPress投稿完了"
+
+      - name: Post to GitHub Pages (Mimosa + LocalNavi)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
+          MIMOSA_REPO: ${{ secrets.MIMOSA_REPO }}
+          LOCALNAVI_REPO: ${{ secrets.LOCALNAVI_REPO }}
+        run: |
+          python scripts/post_github.py
+          echo "✅ GitHub Pages投稿完了"
+
+      - name: Send notification (note用サマリー)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python scripts/notify.py
+          echo "✅ 通知送信完了"
+
+      - name: Save generated articles as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-articles-${{ github.run_number }}
+          path: generated_articles.json
+          retention-days: 30

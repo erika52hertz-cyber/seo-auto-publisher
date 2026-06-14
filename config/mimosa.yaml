@@ -1,0 +1,52 @@
+service:
+  name: "Mimosa Works"
+  url: "https://mimosaworks.com"
+  platform: "github"
+  repo: "REPO_NAME_HERE"  # 要設定
+  branch: "main"
+  posts_dir: "_posts"
+  language: "ja"
+  tone: "データ重視・AIテック感・経営者目線・コスト削減訴求"
+  cta: "月30分のインタビューだけでコンテンツを自動量産。Mimosa Worksの無料相談はこちら。"
+
+keywords:
+  # 課題認識層
+  problem:
+    - "中小企業 マーケティング 人手不足 解決"
+    - "ブログ 書く時間 ない 経営者"
+    - "SNS更新 続かない 会社"
+    - "コンテンツ マーケ 担当者 いない"
+    - "マーケティング 自動化 中小企業"
+
+  # ソリューション探索層
+  solution:
+    - "AI ブログ 自動生成 ツール"
+    - "SNS 自動投稿 中小企業 ツール"
+    - "マーケ 外注 月額 安い"
+    - "ブログ代行 AI 比較"
+    - "コンテンツ 自動化 サービス"
+
+  # 比較・導入検討層
+  comparison:
+    - "AIライター ツール 比較 2026"
+    - "コンテンツ マーケ 自動化 費用"
+    - "ブログ代行 vs AI どちらが安い"
+    - "AI マーケ ツール おすすめ"
+
+  # テック・事例興味層
+  tech:
+    - "Claude API 活用 マーケティング"
+    - "AI 運営 個人事業 事例"
+    - "生成AI ビジネス活用 中小企業"
+    - "ChatGPT ブログ 自動投稿 方法"
+
+article_templates:
+  - "AIで月{N}記事書いた結果、{N}ヶ月で検索流入が変わった"
+  - "中小企業がAIマーケを導入する手順【完全版{年}年】"
+  - "ChatGPT vs Claude どちらがブログ記事に向いているか"
+  - "マーケ担当雇用 vs AI自動化、コスト徹底比較"
+  - "{業種}のSNS運用をAIに任せた結果"
+  - "月30分でコンテンツを量産する仕組みの作り方"
+
+github:
+  commit_message: "Add SEO post: {title}"

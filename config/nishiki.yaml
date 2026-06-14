@@ -1,0 +1,71 @@
+service:
+  name: "錦 NISHIKI"
+  url: "https://NISHIKI_DOMAIN_HERE"  # 要設定
+  platform: "wordpress"
+  language: "ja+en"  # バイリンガル
+  tone_ja: "プロフェッショナル・日本市場の専門家・信頼感・グローバル視点"
+  tone_en: "Professional, Japan-market expert, concise, data-backed, global perspective"
+  cta_ja: "日本市場参入・インバウンド集客のご相談はNISHIKIへ。無料相談受付中。"
+  cta_en: "Ready to enter the Japanese market? NISHIKI helps foreign brands localize and convert. Get a free consultation."
+
+keywords:
+  # 軸A：海外企業→日本市場参入（日本語）
+  axis_a_ja:
+    - "海外企業 日本市場参入 LP制作"
+    - "外資系 日本語LP 制作会社"
+    - "日本市場参入 UX ローカライズ"
+    - "海外SaaS 日本語 ランディングページ"
+    - "外国企業 日本向け ホームページ 制作"
+    - "グローバル企業 日本語サイト 最適化"
+    - "日本市場 ローカライズ LP 費用"
+
+  # 軸A：海外企業→日本市場参入（英語）
+  axis_a_en:
+    - "Japan market entry landing page design"
+    - "Japanese landing page localization service"
+    - "Japan UX optimization foreign brand"
+    - "English to Japanese website localization"
+    - "Japan market entry web design agency"
+    - "SaaS Japan localization LP"
+    - "Japanese UX design for foreign companies"
+
+  # 軸B：国内観光施設→インバウンド集客（日本語）
+  axis_b_ja:
+    - "インバウンド集客 旅館 英語LP 制作"
+    - "観光施設 多言語対応 ホームページ"
+    - "地方旅館 外国人集客 サイト制作"
+    - "インバウンド 補助金 LP制作"
+    - "体験施設 英語 予約 導線 制作"
+    - "観光協会 多言語 Web制作"
+    - "旅館 外国人向け ホームページ リニューアル"
+    - "インバウンド対応 宿泊施設 サイト"
+
+article_templates:
+  ja_axis_a:
+    - "海外{国}企業が日本市場LPで失敗する{N}つのUI落とし穴"
+    - "日本人が離脱するLPのファーストビュー{N}パターン"
+    - "{国}ブランドが日本LP刷新で転換率を上げた事例"
+    - "欧米サイトと日本サイトのUXが根本的に違う理由"
+    - "日本市場参入LP制作の費用相場{year}年版"
+
+  ja_axis_b:
+    - "地方旅館がインバウンド客を増やすための英語LP{N}原則"
+    - "インバウンド対応サイト制作の費用相場と使える補助金{year}年版"
+    - "{地域}の旅館がインバウンド集客に成功した方法"
+    - "{国籍}観光客に刺さる旅館サイトの作り方"
+    - "多言語予約ツール比較{year}年版｜旅館に最適なのはどれか"
+
+  en_axis_a:
+    - "Why Foreign SaaS Fails in Japan: UX Mistakes to Avoid"
+    - "Japan-Optimized Landing Pages: What Works and What Doesn't"
+    - "Japanese UX vs Western UX: A Complete Comparison {year}"
+    - "How to Enter the Japanese Market with a Localized LP"
+    - "Japan Landing Page Best Practices for Foreign Brands"
+
+wordpress:
+  post_status: "publish"
+  categories:
+    ja: "日本語ブログ"
+    en: "English Blog"
+  tags_ja: ["日本市場参入", "インバウンド集客", "LP制作", "多言語対応"]
+  tags_en: ["Japan market entry", "LP localization", "Japanese UX", "inbound tourism"]

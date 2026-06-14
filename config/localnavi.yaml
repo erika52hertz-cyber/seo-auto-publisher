@@ -1,0 +1,110 @@
+service:
+  name: "Local Navi"
+  url: "http://localnavi.net"
+  platform: "github"
+  repo: "REPO_NAME_HERE"  # 要設定
+  branch: "main"
+  language: "ja"
+  tone: "地域密着・信頼感・わかりやすい・専門家を探している人に寄り添う"
+  cta: "地域の専門家をまとめて比較・相談できるLocal Naviで、あなたにぴったりの{業種}を見つけましょう。"
+
+# 業種別設定
+categories:
+
+  komuten:
+    posts_dir: "komuten/_posts"
+    label: "工務店"
+    area: "神奈川"
+    regions:
+      - "横浜市"
+      - "川崎市"
+      - "相模原市"
+      - "藤沢市"
+      - "鎌倉市"
+      - "横須賀市"
+      - "平塚市"
+      - "小田原市"
+      - "茅ヶ崎市"
+      - "厚木市"
+    work_types:
+      - "注文住宅"
+      - "リフォーム"
+      - "外壁塗装"
+      - "水回りリフォーム"
+      - "耐震リフォーム"
+      - "二世帯住宅"
+      - "平屋"
+      - "増築"
+    article_templates:
+      - "{region}で{work_type}に強い工務店おすすめ5選【{year}年版】"
+      - "{region}の{work_type}費用相場{year}年版"
+      - "{region}で{work_type}を依頼する前に知っておくべきこと"
+      - "神奈川の工務店で{work_type}｜失敗しない選び方"
+
+  shika:
+    posts_dir: "dental/_posts"
+    label: "歯科・クリニック"
+    area: "全国"
+    regions:
+      - "東京都"
+      - "大阪府"
+      - "神奈川県"
+      - "愛知県"
+      - "福岡県"
+      - "北海道"
+      - "埼玉県"
+      - "千葉県"
+      - "兵庫県"
+      - "京都府"
+    specialties:
+      - "矯正歯科"
+      - "インプラント"
+      - "小児歯科"
+      - "審美歯科"
+      - "訪問診療"
+      - "口腔外科"
+      - "ホワイトニング"
+    article_templates:
+      - "{region}の{specialty}おすすめクリニック【{year}年版】"
+      - "{region}で{specialty}を受けるときの費用と選び方"
+      - "{specialty}に強い歯科を{region}で探す方法"
+
+  # 展開予定（記事生成は準備のみ、投稿は展開時に有効化）
+  inshoku:
+    posts_dir: "inshoku/_posts"
+    label: "飲食店"
+    active: false  # 展開時にtrueに変更
+    regions: ["横浜市", "川崎市", "東京都渋谷区", "東京都新宿区"]
+    genres: ["ランチ", "居酒屋", "カフェ", "イタリアン", "焼肉", "寿司", "ラーメン"]
+    article_templates:
+      - "{region}の{genre}おすすめ店【{year}年版】"
+      - "{region}で{genre}を楽しめるお店の選び方"
+
+  biyoshitsu:
+    posts_dir: "biyoshitsu/_posts"
+    label: "美容室"
+    active: false
+    regions: ["横浜市", "川崎市", "東京都"]
+    specialties: ["縮毛矯正", "カラー", "メンズカット", "ヘアケア", "パーマ"]
+    article_templates:
+      - "{region}で{specialty}が得意な美容室おすすめ【{year}年版】"
+
+  hoken:
+    posts_dir: "hoken/_posts"
+    label: "保険・FP相談"
+    active: false
+    regions: ["神奈川県", "東京都", "大阪府"]
+    article_templates:
+      - "{region}でFP無料相談ができる窓口おすすめ【{year}年版】"
+
+  zeirishi:
+    posts_dir: "zeirishi/_posts"
+    label: "税理士・会計士"
+    active: false
+    regions: ["横浜市", "川崎市", "東京都", "大阪市"]
+    article_templates:
+      - "{region}の税理士おすすめ【個人事業主向け{year}年版】"
+      - "{region}で起業時に頼れる税理士の探し方"
+
+github:
+  commit_message: "Add Local Navi post: {title}"
